@@ -7,3 +7,31 @@
   *
 */
 
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  /*The box-sizing property is used to tell the browser what the sizing properties (width and height) should include border-box.*/
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  font-family: Fantasy;
+  font-size: 20px;
+}
+
+.quiz-section {
+  margin-bottom: 20px;
+  border: 1px solid grey;
+  padding: 20px;
+}
+
+button {
+  padding: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+}
