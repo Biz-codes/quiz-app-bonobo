@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Our Cousin Bonobo Quiz Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Revolutionary Boston Quiz</h1>
+    </header>
+    <main>
+        <section class="quiz-section" style="display: none;">
+            <div id="question_wrapper">
+                <h2 class="text" id="question">On March 5, 1770, why did a group of colonists gather at the Customs House in Boston?</h2>
+                <div id="choices">
+                    <input class="option" type="radio" value="0" name="option">
+                    <br>
+                    <input class="option" type="radio" value="1" name="option">
+                    <br>
+                    <input class="option" type="radio" value="2" name="option">
+                    <br>
+                    <input class="option" type="radio" value="3" name="option">
+                    <br>
+                </div>
+            </div>
+            <div class="question-number" id="questionNumberDisplay"> Question 1 of 10</div>
+            <div class="current-score" id="currentScoreDisplay"> Score 1 out of 10</div>
+        </section>
+    </main>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
+
