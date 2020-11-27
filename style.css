@@ -28,9 +28,8 @@ h1 {
 }
 
 
-
 section {
-  margin-bottom: 20px;
+  margin: 20px;
   border: 1px solid grey;
   padding: 20px;
 }
