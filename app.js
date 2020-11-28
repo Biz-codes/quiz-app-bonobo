@@ -135,6 +135,96 @@ const store = [
 
 
 /********** RENDER FUNCTION(S) **********/
+function questionDisplay() {
+
+  //1 - update each question text
+  $('#question').text(store[currentQuestionNumber].question);
+
+//2 - display the what are the choices for the current question
+    //2.1 - first delete all the existing choices before populating it with new ones
+    $('#choices').empty();
+    //2.2 - the get the total number of choices for the current question
+    var totalNumberOfChoices = questionsArray[currentQuestionNumber].questionChoices.length;
+    //2.3 - loop through all the choices and append them to the choices container
+    for (var i = 0; i < totalNumberOfChoices; i++) {
+        //2.3.1 - loop thru the answer choices and create a dynamically generated row for each of them
+        var buildEachChoiceHTML = "<input type='radio' class='option' name='option' value=" + i + ">" + questionsArray[currentQuestionNumber].questionChoices[i] + "<br>";
+        //2.3.2 append that row to the choices container in html
+        $('#choices').append(buildEachChoiceHTML);
+    }
+   //3 - displays the number of the current question
+   $('#questionNumberDisplay').text("Question " + (currentQuestionNumber + 1) + " of " + totalNumberOfQuestion);
+  }
+  
+  /*--- Step 3 - Using functions ---*/
+  
+  $(document).ready(function () {
+  
+  
+      /*--- Hide quiz and result section on load ---*/
+      $('.quiz-section').hide();
+      $('.result-section').hide();
+  
+  
+      /*--- On start quiz ---*/
+      $('#startQuizButton').click(function () { //start the quiz and show the first question
+          $('.result-section').hide();
+          $('.start-section').hide();
+          $('.quiz-section').show();
+          //empty the result details container
+          $('#result_msg').empty();
+          questionDisplay();
+      });
+  
+  
+      /*--- Show quiz questions ---*/
+      $('.quiz-section').on('click', '.option', function () {
+  
+          //get the question answer from the user
+          var userAnswer = $("input[class='option']:checked").val();
+          //get the correct answer from the questionsArray above
+          var correctAnswer = questionsArray[currentQuestionNumber].questionCorrectChoice;
+          //compare the user answer with the correct answer
+          if (userAnswer == correctAnswer) {
+              //if the answer was correct increment the total number of correct answers
+              totalNumberOfCorrectAnswers++;
+              //console.log(totalNumberOfCorrectAnswers);
+          }
+          $('#result_msg').append("<h3>Q: " + questionsArray[currentQuestionNumber].questionText + "</h3>");
+          $('#result_msg').append("<h4>A: " + questionsArray[currentQuestionNumber].correctDetails + "</h4>");
+  
+  
+          //if quiz is finished, show result-section
+          if ((currentQuestionNumber + 1) == totalNumberOfQuestion) {
+  
+              //show the final score
+              $('#finalScore').text(totalNumberOfCorrectAnswers + "/" + totalNumberOfQuestion);
+  
+              //hide other containers
+              $('.quiz-section').hide();
+              $('.start-section').hide();
+              $('.result-section').show();
+          }
+          //else continue to next question
+          else {
+              //increment the current question number
+              currentQuestionNumber++;
+              //display the following question
+              questionDisplay();
+          }
+      });
+  
+  
+      /*--- Load the start section from the result section ---*/
+      $('.result-section').on('click', '#tryagain', function () {
+          $('.start-section').show();
+          $('.quiz-section').hide();
+          $('.result-section').hide();
+          //reset variables to start quiz again
+          currentQuestionNumber = 0;
+          totalNumberOfCorrectAnswers = 0;
+      });
+  });
 
 // This function conditionally replaces the contents of the <main> tag based on the state of the store
 

@@ -12,9 +12,39 @@
 <body>
     <header>
         <h1>Our Cousin Bonobo</h1>
-        <img src
     </header>
-    <section class="greybox-wireframe-links">
+ 
+    <section class="start-section" style="display: block;">
+        <h2 class="text"> How much do you know about this loveable primate? </h2>
+        <img src="images/bonobo-start-image.jpeg" alt="Bonobo staring into camera" width="25%">
+        <p class="text"> Click START to find out!</p>
+        <button class="start-button" id="startQuizButton">START</button>
+    </section>
+   
+    
+    <section class="quiz-section" style="display: none;">
+        <main>
+            <div id="question_wrapper">
+                <h2 class="text" id="question">Besides chimpanzees, which species are the closest primate cousins to bonobos?</h2>
+                <div id="choices">
+                    <input class="option" type="radio" value="0" name="option">
+                    <br>
+                    <input class="option" type="radio" value="1" name="option">
+                    <br>
+                    <input class="option" type="radio" value="2" name="option">
+                    <br>
+                    <input class="option" type="radio" value="3" name="option">
+                    <br>
+                </div>
+                <button type="submit">Submit</button>
+            </div>
+            <div class="question-number" id="questionNumberDisplay"> Question 1 of 10</div>
+            <div class="current-score" id="currentScoreDisplay"> Score 1/10</div>
+        </main>
+    </section>
+    
+    <!--I am leaving these here as discussed with my mentor, but I am rewriting the code as sections as in his model
+ <section class="greybox-wireframe-links">
         <ul>
             <li> 
                 <a href="start.html">Start Wireframe</a> 
@@ -27,7 +57,7 @@
             </li>
         </ul>
     </section>
-    
+    -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.js" crossorigin="anonymous"></script>
     <script src="app.js"></script>
 </body>
