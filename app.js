@@ -1,5 +1,5 @@
 'use strict';
-const store = {
+const store = [
 
   //Question 1
   {
@@ -100,7 +100,7 @@ const store = {
     correctChoice: 3,
     feedback: 'Bonobos live in peaceful communities which value love and cooperation!'
   }
-};
+];
 
   let currentQuestionNumber = 0;
   const totalQNumberOfQuestions = store.length;
@@ -132,7 +132,7 @@ const store = {
 
 // These functions return HTML templates
 
-function 
+
 
 /********** RENDER FUNCTION(S) **********/
 
