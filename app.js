@@ -1,117 +1,113 @@
 'use strict';
-const store = [
+const store = {
 
-  //Question 1
-  {
-    question: 'Besides chimpanzees, which species are the closest primate cousins to bonobos?',
-    imgSrc: 'images/bonobo-q1.jpg',
-    imgAlt: "Primate cousins diagram",
-    choices: ['orangutans', 'gorillas', 'humans', 'capuchin monkeys'],
-    correctChoice: 2,
-    feedback: 'Bonobos are our closest primate cousins!'
-  },
+  questions: [
 
-  //Question 2
-  {
-    question: 'How much of our DNA do we share with bonobos?',
-    imgSrc: 'images/bonobo-q2.jpg',
-    imgAlt: "Woman face to face with baby bonobo",
-    choices: ['86.2%', '95.3%', '98.7%', '99.4%'],
-    correctChoice: 2,
-    feedback: 'Human genetic material is 98.7% identical to bonobo DNA!'
-  },
+    //Question 1
+    {
+      question: 'Besides chimpanzees, which species are the closest primate cousins to bonobos?',
+      imgSrc: 'images/bonobo-q1.jpg',
+      imgAlt: "Primate cousins diagram",
+      options: ['orangutans', 'gorillas', 'humans', 'capuchin monkeys'],
+      correctChoice: 'humans',
+      feedback: 'Bonobos are our closest primate cousins!'
+    },
 
-  //Question 3
-  {
-    question: 'What sexual identity most closely matches the bonobo lifestyle?',
-    imgSrc: 'images/bonobo-q3.jpeg',
-    imgAlt: "Bonobos kissing",
-    choices: ['heterosexual', 'asexual', 'homosexual', 'pansexual'],
-    correctChoice: 3,
-    feedback: 'Bonobos engage in consensual pansexual relationships with other adult troop members regardless of gender, as a way of building relationships and cooperation.'
-  },
+    //Question 2
+    {
+      question: 'How much of our DNA do we share with bonobos?',
+      imgSrc: 'images/bonobo-q2.jpg',
+      imgAlt: "Woman face to face with baby bonobo",
+      options: ['86.2%', '95.3%', '98.7%', '99.4%'],
+      correctChoice: '98.7%',
+      feedback: 'Human genetic material is 98.7% identical to bonobo DNA!'
+    },
 
-  //Question 4
-  {
-    question: 'What kind of love relationships most closely match the bonobo lifestyle?',
-    imgSrc: 'images/bonobo-q4.jpg',
-    imgAlt: "Bonobo troop",
-    choices: ['monogomous', 'bigamous', 'polygomous', 'polyamorous'],
-    correctChoice: 3,
-    feedback: 'Bonobos have a polyamorous free love society, which increases their bonds as a whole community.'
-  },
+    //Question 3
+    {
+      question: 'What sexual identity most closely matches the bonobo lifestyle?',
+      imgSrc: 'images/bonobo-q3.jpeg',
+      imgAlt: "Bonobos kissing",
+      options: ['heterosexual', 'asexual', 'homosexual', 'pansexual'],
+      correctChoice: 'pansexual',
+      feedback: 'Bonobos engage in consensual pansexual relationships with other adult troop members regardless of gender, as a way of building relationships and cooperation.'
+    },
 
-  //Question 5
-  {
-    question: 'Who are the highest ranking members of bonobo society?',
-    imgSrc: 'images/bonobo-q5.jpeg',
-    imgAlt: "Bonobo matriarchs relaxing",
-    choices: ['young females', 'old females', 'young males', 'old males'],
-    correctChoice: 1,
-    feedback: 'Bonobos are matriarchal, with leadership duties being shared amongst the older females through friendship and cooperation.'
-  },
+    //Question 4
+    {
+      question: 'What kind of love relationships most closely match the bonobo lifestyle?',
+      imgSrc: 'images/bonobo-q4.jpg',
+      imgAlt: "Bonobo troop",
+      options: ['monogomous', 'bigamous', 'polygomous', 'polyamorous'],
+      correctChoice: 'polyamorous',
+      feedback: 'Bonobos have a polyamorous free love society, which increases their bonds as a whole community.'
+    },
 
-  //Question 6
-  {
-    question: 'Where is the Ape Cognition & Conservation Initiative (formerly Great Ape Trust) located?',
-    imgSrc: 'images/bonobo-q6.jpeg',
-    imgAlt: "Ape Initiative Logo",
-    choices: ['Iowa', 'New York', 'California', 'Tennesee'],
-    correctChoice: 0,
-    feedback: 'The Ape Cognition & Conservation Initiative is located on 230 acres of forest in Des Moines, Iowa.'
-  },
+    //Question 5
+    {
+      question: 'Who are the highest ranking members of bonobo society?',
+      imgSrc: 'images/bonobo-q5.jpeg',
+      imgAlt: "Bonobo matriarchs relaxing",
+      options: ['young females', 'old females', 'young males', 'old males'],
+      correctChoice: 'old females',
+      feedback: 'Bonobos are matriarchal, with leadership duties being shared amongst the older females through friendship and cooperation.'
+    },
 
-  //Question 7
-  {
-    question: 'Kanzi lives at the Ape Cognition & Conservation Initiative. How many words were in his vocabulary in 2018, according to the Des Moines Register?',
-    imgSrc: 'images/bonobo-q7.jpeg',
-    imgAlt: "Kanzi the bonobo looking into the camera",
-    choices: ['1,000', '2,000', '3,000', '4,000'],
-    correctChoice: 2,
-    feedback: 'Bonobos have an incredible capacity for learning human language. Kanzi knows over 3,000 words!'
-  },
+    //Question 6
+    {
+      question: 'Where is the Ape Cognition & Conservation Initiative (formerly Great Ape Trust) located?',
+      imgSrc: 'images/bonobo-q6.jpeg',
+      imgAlt: "Ape Initiative Logo",
+      options: ['Iowa', 'New York', 'California', 'Tennesee'],
+      correctChoice: 'Iowa',
+      feedback: 'The Ape Cognition & Conservation Initiative is located on 230 acres of forest in Des Moines, Iowa.'
+    },
 
-  //Question 8
-  {
-    question: 'Which of the following is NOT a way that bonobos communicate at the Ape Cognition & Conservation Initiative?',
-    imgSrc: 'images/bonobo-q8.jpeg',
-    imgAlt: "Bonobos using lexigram keyboard with a scientist in a tie dye shirt",
-    choices: ['typing simple words on a qwerty keyboard', 'hand gestures', 'vocalization', 'selecting symbols on a lexigram keyboard'],
-    correctChoice: 0,
-    feedback: 'The bonobos at the Ape Initiative cannot type words on a qwerty keyboard, but they DO communicate using hand gestures, vocalization, and selecting symbols on a lexigram keyboard!'
-  },
+    //Question 7
+    {
+      question: 'Kanzi lives at the Ape Cognition & Conservation Initiative. How many words were in his vocabulary in 2018, according to the Des Moines Register?',
+      imgSrc: 'images/bonobo-q7.jpeg',
+      imgAlt: "Kanzi the bonobo looking into the camera",
+      options: ['1,000', '2,000', '3,000', '4,000'],
+      correctChoice: '3,000',
+      feedback: 'Bonobos have an incredible capacity for learning human language. Kanzi knows over 3,000 words!'
+    },
 
-  //Question 9
-  {
-    question: 'With whom do baby bonobos have the closest bonds?',
-    imgSrc: 'images/bonobo-q9.jpeg',
-    imgAlt: "Mama and baby bonobo sleeping",
-    choices: ['their father', 'their mother', 'their siblings', 'their playmates'],
-    correctChoice: 1,
-    feedback: 'Because of their free love culture, male bonobos cannot be sure which babies are theirs, so baby bonobos share incredibly close bonds with their mothers!'
-  },
+    //Question 8
+    {
+      question: 'Which of the following is NOT a way that bonobos communicate at the Ape Cognition & Conservation Initiative?',
+      imgSrc: 'images/bonobo-q8.jpeg',
+      imgAlt: "Bonobos using lexigram keyboard with a scientist in a tie dye shirt",
+      options: ['typing simple words on a qwerty keyboard', 'hand gestures', 'vocalization', 'selecting symbols on a lexigram keyboard'],
+      correctChoice: 'typing simple words on a qwerty keyboard',
+      feedback: 'The bonobos at the Ape Initiative cannot type words on a qwerty keyboard, but they DO communicate using hand gestures, vocalization, and selecting symbols on a lexigram keyboard!'
+    },
 
-  //Question 10
-  {
-    question: 'What values characterize the overarching culture of bonobos?',
-    imgSrc: 'images/bonobo-q10.jpeg',
-    imgAlt: "Bonobos sharing fruit",
-    choices: ['power and control', 'violence and territorial aggression', 'fun and anarchy', 'cooperation and peace'],
-    correctChoice: 3,
-    feedback: 'Bonobos live in peaceful communities which value love and cooperation!'
-  }
-];
+    //Question 9
+    {
+      question: 'With whom do baby bonobos have the closest bonds?',
+      imgSrc: 'images/bonobo-q9.jpeg',
+      imgAlt: "Mama and baby bonobo sleeping",
+      options: ['their father', 'their mother', 'their siblings', 'their playmates'],
+      correctChoice: 'their mother',
+      feedback: 'Because of their free love culture, male bonobos cannot be sure which babies are theirs, so baby bonobos share incredibly close bonds with their mothers!'
+    },
 
-  let currentQuestionNumber = 0;
-  const totalQNumberOfQuestions = store.length;
-  let totalNumberCorrect = 0;
+    //Question 10
+    {
+      question: 'What values characterize the overarching culture of bonobos?',
+      imgSrc: 'images/bonobo-q10.jpeg',
+      imgAlt: "Bonobos sharing fruit",
+      options: ['power and control', 'violence and territorial aggression', 'fun and anarchy', 'cooperation and peace'],
+      correctChoice: 'cooperation and peace',
+      feedback: 'Bonobos live in peaceful communities which value love and cooperation!'
+    }
+  ],
 
-  /*This came from the starter code, so I need to keep it in mind.
   quizStarted: false,
   questionNumber: 0,
   score: 0
-  */
-
+};
 
 /**
  * 
@@ -132,99 +128,53 @@ const store = [
 
 // These functions return HTML templates
 
+function startScreen() {
+  return `
+  <form id="js-form">
+    <header>
+        <h1>Our Cousin Bonobo</h1>
+        <img src="images/bonobo-start-image.jpeg" alt="Bonobo staring into camera" width="25%">
+    </header>
+        <h2 class="text">How much do you know about this loveable primate?</h2>
+        <p> Click START to find out!</p>
+        <button class="start-button" id="startQuizButton">START</button>
+  </form>
+`;
+}
+
+function questionScreens(questions) {
+  return `
+  <form id="js-form">
+    <h2 class="js-form-title">${questions[i].question}</h2>
+    <img src="${questions[i].imgSrc}" alt="${questions[i].imgAlt}">
+    <div id="options">
+      <input class="option" type="radio" value="${questions[i].options[0]}" name="option">
+      <br>
+      <input class="option" type="radio" value="${questions[i].options[1]}" name="option">
+      <br>
+      <input class="option" type="radio" value="${questions[i].options[2]}" name="option">
+      <br>
+      <input class="option" type="radio" value="${questions[i].options[3]}" name="option">
+      <br>
+  </div>
+  <button type="submit">Submit</button>
+  </form>
+  `;
+}
+
+
+function resultsScreen() {
+  return `
+  <form id="js-form">
+    <h2 class="text"> Final Score </h2>
+    <h3 class="text" id="finalScore">${store.totalCorrect}/10</h3>
+    <button class="start-button" id="tryagain">Try Again</button>
+    </form>
+  `;
+}
 
 
 /********** RENDER FUNCTION(S) **********/
-function questionDisplay() {
-
-  //1 - update each question text
-  $('#question').text(store[currentQuestionNumber].question);
-
-//2 - display the what are the choices for the current question
-    //2.1 - first delete all the existing choices before populating it with new ones
-    $('#choices').empty();
-    //2.2 - the get the total number of choices for the current question
-    var totalNumberOfChoices = questionsArray[currentQuestionNumber].questionChoices.length;
-    //2.3 - loop through all the choices and append them to the choices container
-    for (var i = 0; i < totalNumberOfChoices; i++) {
-        //2.3.1 - loop thru the answer choices and create a dynamically generated row for each of them
-        var buildEachChoiceHTML = "<input type='radio' class='option' name='option' value=" + i + ">" + questionsArray[currentQuestionNumber].questionChoices[i] + "<br>";
-        //2.3.2 append that row to the choices container in html
-        $('#choices').append(buildEachChoiceHTML);
-    }
-   //3 - displays the number of the current question
-   $('#questionNumberDisplay').text("Question " + (currentQuestionNumber + 1) + " of " + totalNumberOfQuestion);
-  }
-  
-  /*--- Step 3 - Using functions ---*/
-  
-  $(document).ready(function () {
-  
-  
-      /*--- Hide quiz and result section on load ---*/
-      $('.quiz-section').hide();
-      $('.result-section').hide();
-  
-  
-      /*--- On start quiz ---*/
-      $('#startQuizButton').click(function () { //start the quiz and show the first question
-          $('.result-section').hide();
-          $('.start-section').hide();
-          $('.quiz-section').show();
-          //empty the result details container
-          $('#result_msg').empty();
-          questionDisplay();
-      });
-  
-  
-      /*--- Show quiz questions ---*/
-      $('.quiz-section').on('click', '.option', function () {
-  
-          //get the question answer from the user
-          var userAnswer = $("input[class='option']:checked").val();
-          //get the correct answer from the questionsArray above
-          var correctAnswer = questionsArray[currentQuestionNumber].questionCorrectChoice;
-          //compare the user answer with the correct answer
-          if (userAnswer == correctAnswer) {
-              //if the answer was correct increment the total number of correct answers
-              totalNumberOfCorrectAnswers++;
-              //console.log(totalNumberOfCorrectAnswers);
-          }
-          $('#result_msg').append("<h3>Q: " + questionsArray[currentQuestionNumber].questionText + "</h3>");
-          $('#result_msg').append("<h4>A: " + questionsArray[currentQuestionNumber].correctDetails + "</h4>");
-  
-  
-          //if quiz is finished, show result-section
-          if ((currentQuestionNumber + 1) == totalNumberOfQuestion) {
-  
-              //show the final score
-              $('#finalScore').text(totalNumberOfCorrectAnswers + "/" + totalNumberOfQuestion);
-  
-              //hide other containers
-              $('.quiz-section').hide();
-              $('.start-section').hide();
-              $('.result-section').show();
-          }
-          //else continue to next question
-          else {
-              //increment the current question number
-              currentQuestionNumber++;
-              //display the following question
-              questionDisplay();
-          }
-      });
-  
-  
-      /*--- Load the start section from the result section ---*/
-      $('.result-section').on('click', '#tryagain', function () {
-          $('.start-section').show();
-          $('.quiz-section').hide();
-          $('.result-section').hide();
-          //reset variables to start quiz again
-          currentQuestionNumber = 0;
-          totalNumberOfCorrectAnswers = 0;
-      });
-  });
 
 // This function conditionally replaces the contents of the <main> tag based on the state of the store
 
