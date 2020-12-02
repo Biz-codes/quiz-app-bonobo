@@ -391,6 +391,7 @@ function editSubmitButtonClass(screen) {
 function getFeedback() {
   $('main').on('click', '.submit-choice', event => {
     event.preventDefault();
+    let screen = store.screens[getIndex()];
     let youAreHere = $('input[name="options"]:checked').val();
     checkIfAnswered(screen, youAreHere);
     editSubmitButtonClass(screen);
@@ -410,6 +411,7 @@ function editNextButtonClass(screen) {
 function nextQuestion() {
   $('main').on('click', '.next', event => {
     event.preventDefault();
+    let screen = store.screens[getIndex()];
     updateIndex();
     editNextButtonClass(screen);
     render();
