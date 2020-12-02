@@ -8,9 +8,9 @@ const store = {
       message: 'How much do you know about this loveable primate? <br> Click START to find out!',
       imgSrc: 'images/bonobo-start-image.jpeg',
       imgAlt: "Bonobo staring into camera",
-      buttonText: ['START']
+      buttonText: ['START'],
       state: 'start',
-    }
+    },
 
     //Question 1
     {
@@ -170,13 +170,13 @@ const store = {
         'Incorrect. Bonobos live in peaceful communities which value love and cooperation!'
       ],
       state: 'question',
-    }
+    },
 
     //Results
     {
       message: 'Final Score',
       imgSrc: 'bonobo-results.jpeg',
-      imgAlt: "Adorable baby bonobo"
+      imgAlt: "Adorable baby bonobo",
       buttonText: ['Try again?'],
       state: 'results',
     }
@@ -354,7 +354,7 @@ function giveIncorrectFeedback(screen) {
 }
   
 function giveFeedback (screen, youAreHere) {
-  if checkSubmission(youAreHere, screen.correctChoice) === true {
+  if (checkSubmission(youAreHere, screen.correctChoice) === true) {
     updateScore();
     giveCorrectFeedback (screen);
   }
@@ -430,6 +430,7 @@ function main() {
   getFeedback();
   nextQuestion();
   restartQuiz();
+}
 
 //on DOM ready run callback function
 $(main);
