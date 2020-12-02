@@ -242,8 +242,8 @@ function questionScreen(youAreHere) {
       </div>
   </div>
   <div> 
-    <p class="feedback">  </p>
-    <p> Question # ${screen.screenNumber} of 10 </p>
+    <p class="feedback"></p>
+    <p> Question # ${store.screens.screenNumber} of 10 </p>
     <p> Current Score: ${store.score}/10 </p>
   </div>
   <button class="submit-choice" type="submit">${youAreHere.buttonText[0]}</button>
@@ -358,7 +358,7 @@ function giveIncorrectFeedback(screen) {
 }
   
 function giveFeedback (screen, youAreHere) {
-  if (checkSubmission(youAreHere, screen.correctChoice) === true) {
+  if (checkSubmission(youAreHere, screen.correctChoice)) {
     updateScore();
     giveCorrectFeedback (screen);
   }
