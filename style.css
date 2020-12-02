@@ -27,15 +27,27 @@ h1 {
   font-size: 200%;
 }
 
+img {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
 
 main {
   margin: 20px;
   border: 1px solid grey;
   padding: 20px;
+
 }
 
 button {
-  padding: 5px;
+  padding: 10px 15px;
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #1d0029;
+  color: whitesmoke;
 }
 
 button:hover {
@@ -45,4 +57,11 @@ button:hover {
 ul {
   display: inline-block;
   width: auto;
+}
+
+.right-answer, .wrong-answer {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid 
 }
