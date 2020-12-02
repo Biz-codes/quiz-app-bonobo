@@ -228,18 +228,22 @@ function questionScreen(youAreHere) {
       <img src="${youAreHere.imgSrc}" alt="${youAreHere.imgAlt}">
     </div>
     <div class="js-answers-wrapper>
-      <input class="option" type="radio" name="options" value="${youAreHere.options[0]}" required>${youAreHere.options[0]}>
-      <br>
-      <input class="option" type="radio" name="options" value="${youAreHere.options[1]}" required>${youAreHere.options[1]}>
-      <br>
-      <input class="option" type="radio" name="options" value="${youAreHere.options[2]}" required>${youAreHere.options[2]}>
-      <br>
-      <input class="option" type="radio" name="options" value="${youAreHere.options[3]}" required>${youAreHere.options[3]}>
-      <br>
+      <div class="choice-wrapper" id="option-zero">
+        <input class="option" type="radio" name="options" id="option-zero" value="${youAreHere.options[0]}" required>${youAreHere.options[0]}
+      </div>
+      <div class="choice-wrapper" id="option-one">
+        <input class="option" type="radio" name="options" id="option-one" value="${youAreHere.options[1]}" required>${youAreHere.options[1]}
+      </div>
+      <div class="choice-wrapper" id="option-two">
+        <input class="option" type="radio" name="options" id="option-two" value="${youAreHere.options[2]}" required>${youAreHere.options[2]}
+      </div>
+      <div class="choice-wrapper" id="option-three">
+        <input class="option" type="radio" name="options" id="option-three" value="${youAreHere.options[3]}" required>${youAreHere.options[3]}
+      </div>
   </div>
   <div> 
-    <p class="feedback"> ${youAreHere.feedback[0]} </p>
-    <p> Question # ${youAreHere.screenNumber} of 10 </p>
+    <p class="feedback">  </p>
+    <p> Question # ${screen.screenNumber} of 10 </p>
     <p> Current Score: ${store.score}/10 </p>
   </div>
   <button class="submit-choice" type="submit">${youAreHere.buttonText[0]}</button>
