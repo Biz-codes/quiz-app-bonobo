@@ -227,14 +227,14 @@ function questionScreen(youAreHere) {
     <div class="image-wrapper">
       <img src="${youAreHere.imgSrc}" alt="${youAreHere.imgAlt}">
     </div>
-    <div id="options">
-      <input class="option" type="radio" name="options" value="${youAreHere.options[0]}" name="option">
+    <div class="js-answers-wrapper>
+      <input class="option" type="radio" name="options" value="${youAreHere.options[0]}" required>${youAreHere.options[0]}>
       <br>
-      <input class="option" type="radio" name="options" value="${youAreHere.options[1]}" name="option">
+      <input class="option" type="radio" name="options" value="${youAreHere.options[1]}" required>${youAreHere.options[1]}>
       <br>
-      <input class="option" type="radio" name="options" value="${youAreHere.options[2]}" name="option">
+      <input class="option" type="radio" name="options" value="${youAreHere.options[2]}" required>${youAreHere.options[2]}>
       <br>
-      <input class="option" type="radio" name="options" value="${youAreHere.options[3]}" name="option">
+      <input class="option" type="radio" name="options" value="${youAreHere.options[3]}" required>${youAreHere.options[3]}>
       <br>
   </div>
   <div> 
