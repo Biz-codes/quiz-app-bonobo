@@ -1,3 +1,8 @@
+My name is Biz, and I created this app for Thinkful Software Engineering Flex Program.
+
+![Bonobo app screenshot](images/bonobo-app-screenshot)
+
+
 User experience requirements:
 
 The following requirements cover what the app must do, from the user's perspective.
