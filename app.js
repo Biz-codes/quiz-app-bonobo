@@ -187,35 +187,38 @@ function questionScreen() {
   `;
 }
 
+//function to show results screen
 function resultsScreen() {
   return `
-  <div class="results">
-    <img src = 'bonobo-results.jpeg' alt="Adorable baby bonobo">
-      <form id="js-restart-quiz">
-        <fieldset>
-          <div class="row">
-            <div class="col-12">
-              <legend>Your Score is: ${store.score}/${store.questions.length}</legend>
-            </div>
+  <div class="image-wrapper">
+    <img src = 'images/bonobo-results.jpeg' alt="Adorable baby bonobo">
+  </div>
+  <div class="results">  
+    <form id="js-restart-quiz">
+      <fieldset>
+        <div class="row">
+          <div>
+            <p>Final Score: ${store.score}/${store.questions.length}</p>
           </div>
-          <div class="row">
-            <div class="col-12">
-              <button type="submit" id="restart"> Try Again? </button>
-            </div>
+        </div>
+        <div class="row">
+          <div>
+            <button type="submit" id="restart"> Try Again? </button>            
           </div>
-        </fieldset>
+        </div>
+      </fieldset>
     </form>
-    </div>
+  </div>
   `;
 }
-//When the page loads, I want the `startScreen` to display
 
+//function to show the user a message about whether they are correct or incorrect and provide the correct answer 
 function generateFeedbackHTML(answerStatus) {
   let correctAnswer = store.questions[store.currentQuestion].correctAnswer;
   let html = '';
   if (answerStatus === 'correct') {
     html = `
-    <div class="right-answer">Correct!</div>
+    <div class="right-answer">Correct! +1</div>
     <button type="submit" id="next-question-btn" tabindex="6"> Next &gt;></button>
     `;
   }
@@ -282,23 +285,16 @@ function handleQuestionFormSubmission() {
 
     // get value from checkbox checked by user
     let selectedOption = $('input[name=options]:checked').val();
-    /**
-     * Creates an id '#option-container' + the index of 
-     * the current question in the answers array.
-     * 
-     * Example: #option-container-0
-     */
-    //let optionContainerId = `#option-container-${currentQuestion.answers.findIndex(i => i === selectedOption)}`;
 
+    //adds 1 to the score if they are correct, tells generateFeedbackHTML which feedback to give, and puts the feedback under the answer choices.
     if (selectedOption === currentQuestion.correctAnswer) {
       store.score++;
-      //$(optionContainerId).append(generateFeedbackHTML('correct'));
       $('.answers').append(generateFeedbackHTML('correct'));
     }
     else {
-      //$(optionContainerId).append(generateFeedbackHTML('incorrect'));
       $('.answers').append(generateFeedbackHTML('incorrect'));
     }
+    //replaces the Submit button with a Next button.
     store.currentQuestion++;
     // hide the submit button
     $('#submit-answer-btn').hide();
@@ -337,29 +333,4 @@ function handleQuizApp() {
 
 $(handleQuizApp);
 
-/********** RENDER FUNCTION(S) **********/
-
-// This function conditionally replaces the contents of the <main> tag based on the state of the store
-
-
-
-/********** EVENT HANDLER FUNCTIONS **********/
-
-// These functions handle events (submit, click, etc)
-
-//When the Start button is clicked, I want the screens to add 1 and be on a `questionScreen` for #1 to display
-//The feedback section should read "Click Submit to to check you answer!"
-//The button text should say "Submit"
-//The slide info should read "Question 1 of 10. Current Score 0/10"
-//When the Submit button is clicked with a correct answer, the feedback section should change to [1] with the correct message
-//the button text should change to "Next."
-//the slide info should read "Question 1 of 10. Current Score 1/10"
-//When the Submit button is clicked with an incorrect answer, the feedback section should change to [2] with the incorrect message
-//The button text should change to "Next."
-//The slide info should read "Question 1 of 10. Current Score 0/10"
-//When the "Next" button is clicked, the screens should add 1 and change to the version 0 of question 2.
-// On screen [10] when the Finish button is clicked, the screen should change to [11] to show the `resultsScreen`
-//The screen should show the Final score
-//If the user clicks Try Again the screen should go back to the Question 1 which is screens[1]
-//The score should reset to 0
 
