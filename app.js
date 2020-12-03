@@ -35,7 +35,7 @@ const store = {
       question: 'What kind of love relationships most closely match the bonobo lifestyle?',
       imgSrc: 'images/bonobo-q4.jpg',
       imgAlt: "Bonobo troop",
-      answers: ['monogomous', 'bigamous', 'polygomous', 'polyamorous'],
+      answers: ['monogomous', 'bigamous', 'polygamous', 'polyamorous'],
       correctAnswer: 'polyamorous',
     },
 
@@ -124,7 +124,8 @@ function startScreen() {
   return `
   <div class="start-screen">
     <img src="images/bonobo-start-image.jpeg" alt="Bonobo staring into camera">
-    <p> How much do you know about this loveable primate? <br> Click START to find out!</p>
+    <p> How much do you know about this loveable primate? </p> 
+    <p> Click START to find out!</p>
     <button id="start" type='submit'>START</button>
   </div>
   `;
@@ -153,7 +154,7 @@ function listAnswers() {
   answersArray.forEach(answer => {
     answersHtml += `
       <div id="option-container-${i}">
-        <input type="radio" name="options" id="option${i + 1}" value= "${answer}" tabindex ="${i + 1}" required> 
+        <input type="radio" class="options" name="options" id="option${i + 1}" value= "${answer}" tabindex ="${i + 1}" required> 
         <label for="option${i + 1}"> ${answer}</label>
       </div>
     `;
@@ -170,7 +171,7 @@ function questionScreen() {
     <form id="question-form" class="question-form">
       <fieldset>
         <div class="question">
-          <legend> ${currentQuestion.question}</legend>
+          <p> ${currentQuestion.question}</p>
         </div>
         <div class="image-wrapper">
           <img src="${currentQuestion.imgSrc}" alt="${currentQuestion.imgAlt}">
@@ -214,13 +215,13 @@ function generateFeedbackHTML(answerStatus) {
   let html = '';
   if (answerStatus === 'correct') {
     html = `
-    <div class="right-answer">That is correct!</div>
+    <div class="right-answer">Correct!</div>
     <button type="submit" id="next-question-btn" tabindex="6"> Next &gt;></button>
     `;
   }
   else if (answerStatus === 'incorrect') {
     html = `
-      <div class="wrong-answer">That is incorrect. The correct answer is ${correctAnswer}.</div>
+      <div class="wrong-answer">Incorrect. The correct answer is ${correctAnswer}.</div>
       <button type="submit" id="next-question-btn" tabindex="6"> Next &gt;></button>
     `;
   }
