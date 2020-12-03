@@ -20,10 +20,7 @@ header {
   background-color: #f5f5dd;
   color: brown;
   border: 1px dashed #1d0029;
-  margin-top: 20px;
-  margin-bottom: 0;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin: 10px 10px 0 10px;
 }
 
 h1 {
@@ -35,7 +32,7 @@ h1 {
 body {
   text-align: center;
   font-family: Fantasy;
-  font-size: 20px;
+  font-size: 14px;
   color: #1d0029
 }
 
@@ -43,14 +40,14 @@ img {
   width: 50%;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 main {
-  margin: 0 20px 20px 20px;
+  margin: 0 10px 10px 10px;
   border: 1px solid #1d0029;
-  padding: 20px;
+  padding: 10px;
   background-color: #5EE8C1;
 }
 
@@ -92,10 +89,68 @@ p {
 }
 
 .right-answer, .wrong-answer {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   margin-left: 10%;
   margin-right: 10%;
   padding: 10px;
   border: 1px solid #1d0029
+}
+
+@media (min-width: 480px){
+  header {
+    margin: 20px 20px 0 20px;
+  }
+
+  body {
+    font-size: 110%;
+  }
+
+  main {
+    margin: 0 20px 20px 20px;
+    border: 1px solid #1d0029;
+    padding: 20px;
+    background-color: #5EE8C1;
+  }
+
+}
+
+@media (min-width: 768px) {
+  
+  
+
+  h1 {
+    font-size: 175%;
+  }
+
+  body {
+    font-size: 120%;
+  }
+
+  .right-answer, .wrong-answer {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 20px;
+    border: 1px solid #1d0029
+  }
+
+} 
+
+@media (min-width: 1024px) {
+
+  h1 {
+    font-size: 175%;
+  }
+
+  body {
+    font-size: 130%;
+  } 
+
+  img {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
 }
