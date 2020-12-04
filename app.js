@@ -1,4 +1,20 @@
 'use strict';
+
+/**
+ * 
+ * Technical requirements:
+ * 
+ * Your app should include a render() function, that regenerates the view each time the store is updated. 
+ * See your course material and access support for more details.
+ *
+ * NO additional HTML elements should be added to the index.html file.
+ *
+ * You may add attributes (classes, ids, etc) to the existing HTML elements, or link stylesheets or additional scripts if necessary
+ *
+ * SEE BELOW FOR THE CATEGORIES OF THE TYPES OF FUNCTIONS YOU WILL BE CREATING 👇
+ * 
+ */
+
 const store = {
 
   questions: [
@@ -100,20 +116,7 @@ const store = {
   score: 0
 };
 
-/**
- * 
- * Technical requirements:
- * 
- * Your app should include a render() function, that regenerates the view each time the store is updated. 
- * See your course material and access support for more details.
- *
- * NO additional HTML elements should be added to the index.html file.
- *
- * You may add attributes (classes, ids, etc) to the existing HTML elements, or link stylesheets or additional scripts if necessary
- *
- * SEE BELOW FOR THE CATEGORIES OF THE TYPES OF FUNCTIONS YOU WILL BE CREATING 👇
- * 
- */
+
 
 /********** TEMPLATE GENERATION FUNCTIONS **********/
 
@@ -221,8 +224,7 @@ function generateFeedbackHTML(answerStatus) {
     <div class="right-answer">Correct! +1</div>
     <button type="submit" id="next-question-btn" tabindex="6"> Next &gt;></button>
     `;
-  }
-  else if (answerStatus === 'incorrect') {
+  } else if (answerStatus === 'incorrect') {
     html = `
       <div class="wrong-answer">Incorrect. The correct answer is ${correctAnswer}.</div>
       <button type="submit" id="next-question-btn" tabindex="6"> Next &gt;></button>
@@ -230,6 +232,15 @@ function generateFeedbackHTML(answerStatus) {
   }
   return html;
 }
+
+
+
+
+
+
+
+
+
 
 /********** RENDER FUNCTION **********/
 
@@ -243,16 +254,24 @@ function render() {
   if (store.quizStarted === false) {
     $('main').html(startScreen());
     return;
-  }
-  else if (store.currentQuestion >= 0 && store.currentQuestion < store.questions.length) {
+  } else if (store.currentQuestion >= 0 && store.currentQuestion < store.questions.length) {
     html = questionNumberAndScore();
     html += questionScreen();
     $('main').html(html);
-  }
-  else {
+  } else {
     $('main').html(resultsScreen());
   }
 }
+
+
+
+
+
+
+
+
+
+
 
 /********** EVENT HANDLER FUNCTIONS **********/
 
@@ -290,8 +309,7 @@ function handleQuestionFormSubmission() {
     if (selectedOption === currentQuestion.correctAnswer) {
       store.score++;
       $('.answers').append(generateFeedbackHTML('correct'));
-    }
-    else {
+    } else {
       $('.answers').append(generateFeedbackHTML('incorrect'));
     }
     //replaces the Submit button with a Next button.
@@ -310,12 +328,15 @@ function handleQuestionFormSubmission() {
 /**
  * Resets all values to prepare to restart quiz
  */
+
+ //puts functions together to restart Quiz
 function restartQuiz() {
   store.quizStarted = false;
   store.currentQuestion = 0;
   store.score = 0;
 }
 
+//puts functions together to handle the click of the restart button
 function handleRestartButtonClick() {
   $('body').on('click', '#restart', () => {
     restartQuiz();
@@ -323,6 +344,7 @@ function handleRestartButtonClick() {
   });
 }
 
+//puts all the functions together to handle the Quiz app
 function handleQuizApp() {
   render();
   handleStartClick();
@@ -331,6 +353,5 @@ function handleQuizApp() {
   handleRestartButtonClick();
 }
 
+//callback function
 $(handleQuizApp);
-
-
