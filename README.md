@@ -1,5 +1,3 @@
-My name is Biz, and I created this app for Thinkful Software Engineering Flex Program.
-
 Are you a primate enthusiast? Or, do you want to know more about the "pygmy chimpanzee" that has so much in common with us humans?! You can take the quiz in this app to test your knowledge and learn more about our cousin, the bonobo!
 
 <img src= 'images/bonobo-app-screen-shot.png' alt='Screen Shot of the Bonobo Quiz App'>
